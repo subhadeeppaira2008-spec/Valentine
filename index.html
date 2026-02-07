@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #ffe6ee;
+    text-align: center;
+    padding-top: 80px;
+}
+h1 {
+    color: #ff2f68;
+}
+button {
+    font-size: 20px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#yes {
+    background: #ff2f68;
+    color: white;
+}
+#no {
+    background: #aaa;
+    color: white;
+    position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<button id="yes" onclick="yesClicked()">Yes</button>
+<button id="no">No</button>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("touchstart", moveButton);
+noBtn.addEventListener("mouseover", moveButton);
+
+function moveButton() {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+function yesClicked() {
+    document.body.innerHTML = `
+        <h1>I love you ❤️</h1>
+        <p>Be my Valentine 💕</p>
+    `;
+}
+</script>
+
+</body>
+</html>
